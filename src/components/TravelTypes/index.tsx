@@ -1,4 +1,4 @@
-import { Flex, Grid, Image, Text } from '@chakra-ui/react';
+import { Flex, Image, Text } from '@chakra-ui/react';
 
 export function TravelTypes() {
   return (

@@ -1,0 +1,111 @@
+{
+  "continents": [
+    {
+      "id": 1,
+      "title": "América do Norte",
+      "description": "A América do Norte é um subcontinente que compreende a porção setentrional do continente americano.",
+      "url": "https://images.unsplash.com/flagged/photo-1575597255483-55f2afb6f42c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2400&q=80",
+      "infotype": [
+        {
+          "id": 1,
+          "quantity": 3,
+          "info": "países"
+        },
+        {
+          "id": 2,
+          "quantity": 6,
+          "info": "línguas"
+        },
+        {
+          "id": 3,
+          "quantity": 54,
+          "info": "cidades"
+        }
+      ],
+      "cities": [
+        {
+          "id": 1,
+          "city": "Miami",
+          "url": "https://images.unsplash.com/photo-1506812574058-fc75fa93fead?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
+          "country": "Estados Unidos",
+          "flag": "US"
+        },
+        {
+          "id": 2,
+          "city": "Cancún",
+          "url": "https://images.unsplash.com/photo-1510097467424-192d713fd8b2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1249&q=80",
+          "country": "México",
+          "flag": "MX"
+        },
+        {
+          "id": 3,
+          "city": "Toronto",
+          "url": "https://images.unsplash.com/photo-1541781286675-7b70223358d1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1347&q=80",
+          "country": "Canadá",
+          "flag": "CA"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Europa",
+      "description": "A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a península ocidental da Eurásia, a Europa geralmente divide-se da Ásia a leste pela divisória de águas dos montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste",
+      "url": "https://images.unsplash.com/photo-1545073334-9cb53498f1dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2400&q=80",
+      "infotype": [
+        {
+          "id": 1,
+          "quantity": 50,
+          "info": "países"
+        },
+        {
+          "id": 2,
+          "quantity": 60,
+          "info": "línguas"
+        },
+        {
+          "id": 3,
+          "quantity": 27,
+          "info": "cidades + 100",
+          "toltip": "descubra o resto das cidades"
+        }
+      ],
+      "cities": [
+        {
+          "id": 1,
+          "city": "Londres",
+          "url": "https://images.unsplash.com/photo-1565099946480-e4b34e64f399?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1352&q=80",
+          "country": "Reino Unido",
+          "flag": "GB"
+        },
+        {
+          "id": 2,
+          "city": "Paris",
+          "url": "https://images.unsplash.com/photo-1492136344046-866c85e0bf04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1345&q=80",
+          "country": "França",
+          "flag": "FR"
+        },
+        {
+          "id": 3,
+          "city": "Roma",
+          "url": "https://images.unsplash.com/photo-1591014979417-20f9a787a4da?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1339&q=80",
+          "country": "Itália",
+          "flag": "IT"
+        },
+        {
+          "id": 4,
+          "city": "Praga",
+          "url": "https://images.unsplash.com/photo-1592906209472-a36b1f3782ef?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+          "country": "República Tcheca",
+          "flag": "CZ"
+        },
+        {
+          "id": 5,
+          "city": "Amsterdã",
+          "url": "https://images.unsplash.com/photo-1520672038346-9b20a2c9c173?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1353&q=80",
+          "country": "Holanda",
+          "flag": "NL"
+        }
+      ]
+    }
+  ]
+}

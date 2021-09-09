@@ -1,7 +1,15 @@
 import { Flex, Box, Text } from '@chakra-ui/react';
-import { Swipper } from './Swipper';
 
-export function Carrousel() {
+import { Swipper } from './Swipper';
+interface CarrouselProps {
+  continents: {
+    id: string;
+    continentName: string;
+    url: string;
+  }[];
+}
+
+export function Carrousel({ continents }: CarrouselProps) {
   return (
     <>
       <Flex margin="5rem auto" flexDirection="column">
@@ -17,7 +25,7 @@ export function Carrousel() {
         </Text>
       </Flex>
       <Flex width="100%" height="28.12rem" marginBottom="4rem">
-        <Swipper />
+        <Swipper data={continents} />
       </Flex>
     </>
   );

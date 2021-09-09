@@ -4,15 +4,28 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import SwiperCore, { Pagination, Navigation } from 'swiper';
+import SwiperCore, { Pagination, Navigation, Lazy, Virtual } from 'swiper';
 import { Box, Text, Flex } from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
 
-SwiperCore.use([Pagination, Navigation]);
+interface SwipperProps {
+  data: {
+    id: string;
+    continentName: string;
+    url: string;
+    banner?: string;
+  }[];
+}
 
-export function Swipper() {
+SwiperCore.use([Navigation, Pagination]);
+
+export const Swipper = ({ data }: SwipperProps) => {
   return (
     <>
       <Swiper
+        lazy
+        preloadImages={true}
+        onInit={(swiper: any) => swiper.navigation.update()}
         slidesPerView={1}
         spaceBetween={30}
         loop={true}
@@ -20,42 +33,44 @@ export function Swipper() {
         navigation={true}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <Flex
-            width="100%"
-            height="100%"
-            position="relative"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Box
-              backgroundImage="url('https://images.unsplash.com/photo-1513026705753-bc3fffca8bf4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80')"
-              width="100%"
-              height="100%"
-              display="flex"
-              flexDirection="column"
-              justifyContent="center"
-              filter="brightness(0.8)"
-            ></Box>
-            <Text
-              color="gray.100"
-              fontWeight="700"
-              fontSize="3rem"
-              position="absolute"
-              textAlign="center"
-            >
-              Europa
-              <Text color="gray.400" textAlign="center" fontSize="1.5rem">
-                O continente mais antigo
-              </Text>
-            </Text>
-          </Flex>
-        </SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
+        {data.map(({ id, continentName, url, banner }, index) => {
+          return (
+            <SwiperSlide key={index}>
+              <Flex
+                width="100%"
+                height="100%"
+                position="relative"
+                alignItems="center"
+                justifyContent="center"
+              >
+                <Box
+                  backgroundImage={`url('${url}')`}
+                  backgroundPosition="center"
+                  backgroundSize="cover"
+                  width="100%"
+                  height="100%"
+                  display="flex"
+                  flexDirection="column"
+                  justifyContent="center"
+                  filter="brightness(0.5)"
+                ></Box>
+                <Text
+                  color="gray.100"
+                  fontWeight="700"
+                  fontSize="3rem"
+                  position="absolute"
+                  textAlign="center"
+                >
+                  {continentName}
+                  <Text color="gray.400" textAlign="center" fontSize="1.5rem">
+                    {banner}
+                  </Text>
+                </Text>
+              </Flex>
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </>
   );
-}
+};
