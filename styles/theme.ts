@@ -1,4 +1,5 @@
 import { extendTheme } from '@chakra-ui/react';
+import { createBreakpoints } from '@chakra-ui/theme-tools';
 
 export const theme = extendTheme({
   colors: {
@@ -24,16 +25,16 @@ export const theme = extendTheme({
       },
       '.swiper-button-next, .swiper-button-prev': {
         color: 'yellow.500',
-        padding: '0 4rem',
+        padding: ['0', '0 4rem'],
       },
       ':root': {
         '--swiper-theme-color': '#FFBA08',
       },
       '.swiper-pagination-bullet': {
-        width: '1rem',
-        height: '1rem',
+        width: ['.5rem', '1rem'],
+        height: ['.5rem', '1rem'],
       },
-      '.css-1tolso6': {
+      '.link': {
         cursor: 'pointer',
       },
     },

@@ -8,7 +8,6 @@ import SwiperCore, { Pagination, Navigation } from 'swiper';
 import { Box, Text, Flex } from '@chakra-ui/react';
 
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 
 interface SwipperProps {
   data: {
@@ -40,39 +39,40 @@ export const Swipper = ({ data }: SwipperProps) => {
         {data.map(({ continentName, url, banner }, index) => {
           return (
             <SwiperSlide key={index}>
-              <Flex
-                width="100%"
-                height="100%"
-                position="relative"
-                alignItems="center"
-                justifyContent="center"
-              >
-                <Box
-                  backgroundImage={`url('${url}')`}
-                  backgroundPosition="center"
-                  backgroundSize="cover"
+              <Link href={`${path}/to/${continentName}`} passHref>
+                <Flex
+                  className="link"
                   width="100%"
                   height="100%"
-                  display="flex"
-                  flexDirection="column"
+                  position="relative"
+                  alignItems="center"
                   justifyContent="center"
-                  filter="brightness(0.5)"
-                ></Box>
-                <Link href={`${path}/to/${continentName}`} passHref>
+                >
+                  <Box
+                    backgroundImage={`url('${url}')`}
+                    backgroundPosition="center"
+                    backgroundSize="cover"
+                    width="100%"
+                    height="100%"
+                    display="flex"
+                    flexDirection="column"
+                    justifyContent="center"
+                    filter="brightness(0.5)"
+                  ></Box>
                   <Text
                     color="gray.100"
                     fontWeight="700"
-                    fontSize="3rem"
+                    fontSize={['1.5rem', '3rem']}
                     position="absolute"
                     textAlign="center"
                   >
                     {continentName}
-                    <Text color="gray.400" textAlign="center" fontSize="1.5rem">
+                    <Text color="gray.400" textAlign="center" fontSize={['0.875rem', '1.5rem']}>
                       {banner}
                     </Text>
                   </Text>
-                </Link>
-              </Flex>
+                </Flex>
+              </Link>
             </SwiperSlide>
           );
         })}

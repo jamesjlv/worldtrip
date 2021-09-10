@@ -16,11 +16,11 @@ interface AboutProps {
 export function About({ description, infoType }: AboutProps) {
   return (
     <Grid
-      templateColumns="repeat(2, 1fr)"
+      templateColumns={['1fr', 'repeat(2, 1fr)']}
       width="100%"
       maxWidth="1240"
       margin="0 auto"
-      padding="5rem 2.5rem"
+      padding={['1.5rem 1rem', '5rem 2.5rem']}
     >
       <Description description={description} />
       <Infotype infoType={infoType} />

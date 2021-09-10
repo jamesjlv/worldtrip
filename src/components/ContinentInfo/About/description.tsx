@@ -7,7 +7,7 @@ interface DescriptionProps {
 export function Description({ description }: DescriptionProps) {
   return (
     <Flex>
-      <Text fontSize="1.5rem" textAlign="justify">
+      <Text fontSize={['0.85rem', '1.5rem']} textAlign="justify">
         {description}
       </Text>
     </Flex>

@@ -13,7 +13,7 @@ interface BannerTravelProps {
 
 export function BannerTravel({ continent }: BannerTravelProps) {
   return (
-    <Flex width="100%" height="31.25rem" flexDirection="column" position="relative">
+    <Flex width="100%" height={['9.37rem', '31.25rem']} flexDirection="column" position="relative">
       <Box
         backgroundRepeat="no-repeat"
         backgroundPosition="center"
@@ -21,7 +21,7 @@ export function BannerTravel({ continent }: BannerTravelProps) {
         alt="Five continents and infinity possibilities"
         bgSize="100%"
         width="100%"
-        height="31.25rem"
+        height={['9.37rem', '31.25rem']}
         filter="brightness(0.7)"
         position="absolute"
       />
@@ -29,10 +29,12 @@ export function BannerTravel({ continent }: BannerTravelProps) {
         <Text
           color="gray.200"
           fontWeight="600"
-          fontSize="48"
-          alignSelf="flex-end"
-          marginBottom="3.68rem"
-          marginLeft="2.5rem"
+          fontSize={['1.75rem', '48']}
+          alignSelf={['center', 'flex-end']}
+          marginBottom={['0', '3.68rem']}
+          textAlign={['center', 'initial']}
+          width="100%"
+          marginLeft={['', '2.5rem']}
         >
           {continent.continentName}
         </Text>
