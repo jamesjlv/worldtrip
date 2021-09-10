@@ -21,17 +21,14 @@ SwiperCore.use([Navigation, Pagination]);
 
 export const Swipper = ({ data }: SwipperProps) => {
   return (
-    <>
+    <Flex w="100%" h={['250px', '450px']} maxW="1240px" mx="auto" mb={['5', '10']}>
       <Swiper
-        lazy
-        preloadImages={true}
-        onInit={(swiper: any) => swiper.navigation.update()}
         slidesPerView={1}
-        spaceBetween={30}
         loop={true}
         pagination={{ clickable: true }}
         navigation={true}
-        className="mySwiper"
+        autoplay={{ delay: 4000 }}
+        style={{ width: '100%', flex: '1' }}
       >
         {data.map(({ id, continentName, url, banner }, index) => {
           return (
@@ -71,6 +68,6 @@ export const Swipper = ({ data }: SwipperProps) => {
           );
         })}
       </Swiper>
-    </>
+    </Flex>
   );
 };
