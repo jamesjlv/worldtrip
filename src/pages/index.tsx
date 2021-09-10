@@ -36,6 +36,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         id: continent.id,
         continentName: continent.title,
         url: continent.url,
+        banner: continent.banner,
       });
     });
   }

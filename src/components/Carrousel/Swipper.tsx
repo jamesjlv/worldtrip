@@ -4,9 +4,11 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import SwiperCore, { Pagination, Navigation, Lazy, Virtual } from 'swiper';
+import SwiperCore, { Pagination, Navigation } from 'swiper';
 import { Box, Text, Flex } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
+
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 interface SwipperProps {
   data: {
@@ -20,6 +22,11 @@ interface SwipperProps {
 SwiperCore.use([Navigation, Pagination]);
 
 export const Swipper = ({ data }: SwipperProps) => {
+  let path = '';
+  if (process.browser) {
+    path = location.href;
+  }
+
   return (
     <Flex w="100%" h={['250px', '450px']} maxW="1240px" mx="auto" mb={['5', '10']}>
       <Swiper
@@ -30,7 +37,7 @@ export const Swipper = ({ data }: SwipperProps) => {
         autoplay={{ delay: 4000 }}
         style={{ width: '100%', flex: '1' }}
       >
-        {data.map(({ id, continentName, url, banner }, index) => {
+        {data.map(({ continentName, url, banner }, index) => {
           return (
             <SwiperSlide key={index}>
               <Flex
@@ -51,18 +58,20 @@ export const Swipper = ({ data }: SwipperProps) => {
                   justifyContent="center"
                   filter="brightness(0.5)"
                 ></Box>
-                <Text
-                  color="gray.100"
-                  fontWeight="700"
-                  fontSize="3rem"
-                  position="absolute"
-                  textAlign="center"
-                >
-                  {continentName}
-                  <Text color="gray.400" textAlign="center" fontSize="1.5rem">
-                    {banner}
+                <Link href={`${path}/to/${continentName}`} passHref>
+                  <Text
+                    color="gray.100"
+                    fontWeight="700"
+                    fontSize="3rem"
+                    position="absolute"
+                    textAlign="center"
+                  >
+                    {continentName}
+                    <Text color="gray.400" textAlign="center" fontSize="1.5rem">
+                      {banner}
+                    </Text>
                   </Text>
-                </Text>
+                </Link>
               </Flex>
             </SwiperSlide>
           );

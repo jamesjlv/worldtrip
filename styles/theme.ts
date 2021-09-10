@@ -33,6 +33,9 @@ export const theme = extendTheme({
         width: '1rem',
         height: '1rem',
       },
+      '.css-1tolso6': {
+        cursor: 'pointer',
+      },
     },
   },
 });
